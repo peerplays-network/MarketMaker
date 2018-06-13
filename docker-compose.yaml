@@ -1,0 +1,55 @@
+version: '2'
+services:
+
+ bookie-api:
+  #
+  # Seed Node
+  # =========
+  #
+  # This service can be used to deploy a seed node that exposes the P2P
+  # port to the internet at port 6666 (change below)
+  # 
+  image: pbsa/bookie-api:1.0
+  environment:
+   - 'DEFAULT_ACCOUNT=1.2.18'
+   # - 'PEERPLAYSD_P2P_ENDPOINT=0.0.0.0:6666'
+     #- 'PEERPLAYSD_REPLAY=Yes'   # Replays if the variable exists
+  ports:
+   - "0.0.0.0:5000:5000"
+  volumes:
+  - "bookie-api:/var/lib/bookie-api"
+
+ # node:
+ #  #
+ #  # Node 
+ #  # ====
+ #  #
+ #  # This service can be used to deploy a full node that exposes the RPC
+ #  # port to the internet at port 8090 (change below)
+ #  # 
+ #  image: pbsa/peerplays-core:testnet1.0.2
+ #  ports:
+ #   - "0.0.0.0:8090:8090"
+ #  volumes:
+ #  - "peerplays-node:/var/lib/peerplays"
+
+ # witness:
+  # #
+  # # Witness node Node
+  # # =========
+  # #
+  # # This service can be used to deploy a block producer.
+  # #
+  # # NOTE:
+  # # Please change the private key and witness id accordingly!!
+  # # 
+  # image: pbsa/peerplays-core:testnet1.0.2
+  # environment:
+  #  - 'PEERPLAYSD_PRIVATE_KEY=["BTS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]'
+  #  - 'PEERPLAYSD_WITNESS_ID="1.6.5"'
+  #    #- 'PEERPLAYSD_REPLAY=Yes'   # Replays if the variable exists
+  # volumes:
+  # - "peerplays-witness:/var/lib/peerplays"
+
+volumes:
+ bookie-api:
