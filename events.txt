@@ -1,0 +1,914 @@
+[
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.0",
+        "name": [
+            [
+                "en",
+                "Morocco v Iran"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-15T15:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.1",
+        "name": [
+            [
+                "en",
+                "Portugal v Morocco"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-20T12:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.2",
+        "name": [
+            [
+                "en",
+                "Nigeria v Iceland"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-22T15:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.3",
+        "name": [
+            [
+                "en",
+                "Uruguay v Russia"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-25T14:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.4",
+        "name": [
+            [
+                "en",
+                "Iran v Spain"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-20T18:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.5",
+        "name": [
+            [
+                "en",
+                "Tunisia v England"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-18T18:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.6",
+        "name": [
+            [
+                "en",
+                "Croatia v Nigeria"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-16T19:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.7",
+        "name": [
+            [
+                "en",
+                "Germany v Mexico"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-17T15:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.8",
+        "name": [
+            [
+                "en",
+                "Belgium v Tunisia"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-23T12:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.9",
+        "name": [
+            [
+                "en",
+                "Nigeria v Argentina"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-26T18:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.10",
+        "name": [
+            [
+                "en",
+                "Japan v Poland"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-28T14:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.11",
+        "name": [
+            [
+                "en",
+                "Uruguay v Saudi Arabia"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-20T15:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.12",
+        "name": [
+            [
+                "en",
+                "Panama v Tunisia"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-28T18:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.13",
+        "name": [
+            [
+                "en",
+                "Serbia v Switzerland"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-22T18:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.14",
+        "name": [
+            [
+                "en",
+                "Portugal v Spain"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-15T18:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.15",
+        "name": [
+            [
+                "en",
+                "Sweden v South Korea"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-18T12:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.16",
+        "name": [
+            [
+                "en",
+                "Russia v Egypt"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-19T18:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.17",
+        "name": [
+            [
+                "en",
+                "Japan v Senegal"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-24T15:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.18",
+        "name": [
+            [
+                "en",
+                "Argentina v Croatia"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-21T18:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.19",
+        "name": [
+            [
+                "en",
+                "Brazil v Switzerland"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-17T18:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.20",
+        "name": [
+            [
+                "en",
+                "Serbia v Brazil"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-27T18:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.21",
+        "name": [
+            [
+                "en",
+                "Iran v Portugal"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-25T18:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.22",
+        "name": [
+            [
+                "en",
+                "Switzerland v Costa Rica"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-27T18:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.23",
+        "name": [
+            [
+                "en",
+                "South Korea v Germany"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-27T14:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.24",
+        "name": [
+            [
+                "en",
+                "Spain v Morocco"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-25T18:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.25",
+        "name": [
+            [
+                "en",
+                "England v Belgium"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-28T18:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.26",
+        "name": [
+            [
+                "en",
+                "Saudi Arabia v Egypt"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-25T14:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.27",
+        "name": [
+            [
+                "en",
+                "Senegal v Colombia"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-28T14:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.28",
+        "name": [
+            [
+                "en",
+                "England v Panama"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-24T12:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.29",
+        "name": [
+            [
+                "en",
+                "Mexico v Sweden"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-27T14:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.30",
+        "name": [
+            [
+                "en",
+                "Costa Rica v Serbia"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-17T12:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.31",
+        "name": [
+            [
+                "en",
+                "France v Australia"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-16T10:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.32",
+        "name": [
+            [
+                "en",
+                "Iceland v Croatia"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-26T18:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.33",
+        "name": [
+            [
+                "en",
+                "Denmark v France"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-26T14:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.34",
+        "name": [
+            [
+                "en",
+                "Argentina v Iceland"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-16T13:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.35",
+        "name": [
+            [
+                "en",
+                "Russia v Saudi Arabia"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-14T15:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.36",
+        "name": [
+            [
+                "en",
+                "Australia v Peru"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-26T14:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.37",
+        "name": [
+            [
+                "en",
+                "Belgium v Panama"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-18T15:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.38",
+        "name": [
+            [
+                "en",
+                "Egypt v Uruguay"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-15T12:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.39",
+        "name": [
+            [
+                "en",
+                "Peru v Denmark"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-16T16:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.40",
+        "name": [
+            [
+                "en",
+                "Poland v Colombia"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-24T18:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.41",
+        "name": [
+            [
+                "en",
+                "Brazil v Costa Rica"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-22T12:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.50",
+        "name": [
+            [
+                "en",
+                "South Korea v Mexico"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-23T15:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.51",
+        "name": [
+            [
+                "en",
+                "France v Peru"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-21T15:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.52",
+        "name": [
+            [
+                "en",
+                "Denmark v Australia"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-21T12:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.53",
+        "name": [
+            [
+                "en",
+                "Germany v Sweden"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-23T18:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.54",
+        "name": [
+            [
+                "en",
+                "Poland v Senegal"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-19T15:00:00",
+        "status": "upcoming"
+    },
+    {
+        "event_group_id": "1.17.3",
+        "id": "1.18.55",
+        "name": [
+            [
+                "en",
+                "Colombia v Japan"
+            ]
+        ],
+        "scores": [],
+        "season": [
+            [
+                "en",
+                "2018"
+            ]
+        ],
+        "start_time": "2018-06-19T12:00:00",
+        "status": "upcoming"
+    }
+]
