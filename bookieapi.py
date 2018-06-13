@@ -10,6 +10,7 @@ import bookie
 
 app = Flask(__name__)
 ppy = PeerPlays(nobroadcast=True)
+ppy.wallet.unlock(bookie.pwd)
 
 @app.route("/placeBets", methods=['POST'])
 def placeBets():

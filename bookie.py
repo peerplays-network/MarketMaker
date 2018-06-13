@@ -13,10 +13,8 @@ ppy = PeerPlays(nobroadcast=True)
 ppy.wallet.unlock(pwd)
 
 def getUnmatchedBets(bettor_id):
-	response = []
 	unmatched_bets = ppy.rpc.get_all_unmatched_bets_for_bettor(bettor_id)
-	response.append(unmatched_bets)
-	return response
+	return unmatched_bets
 
 def getSports():
 	sports = Sports(peerplays_instance=ppy)
@@ -47,15 +45,3 @@ def getRules(rules_id):
 	rules = Rule(rules_id, peerplays_instance=ppy)
 	# TODO add pagination
 	return rules
-
-
-
-
-# def getEvents(event_group_id):
-# 	events = EventGroup(event_group_id, peerplays_instance=ppy)
-# 	# TODO add pagination
-# 	return events.events
-
-# def getEvent(event_id):
-# 	event = Event(event_id, peerplays_instance=ppy)
-# 	return event.bettingmarketgroups
