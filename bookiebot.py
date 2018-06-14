@@ -7,10 +7,17 @@ import time
 import random
 from peerplays.amount import Amount
 
+# this function exists to deal with the precision of the backing_multiplier
+def odds_round(x):
+	if (x >= 10):
+		return round(0.5 * round(float(x)/0.5),2)
+	else:
+		return float('%.2f'%(x))
+
 def placeBetHelper(startTime, runner, ppy):
 	with open('events.txt', 'r') as eventsfile: #this file holds all the events for eventgroup 1.17.3 = world cup group stage
 		events = json.loads(eventsfile.read())
-	for event in events:
+	for event in events: 
 		if (event['start_time'] == startTime[:-5]): #find the right game, by start time
 			bmgs = json.loads(json.dumps(bookie.getBettingMarketGroups(event['id'])))
 			for bmg in bmgs: # find the moneyline bmg
@@ -18,8 +25,13 @@ def placeBetHelper(startTime, runner, ppy):
 					markets = json.loads(json.dumps(bookie.getBettingMarkets(bmg['id'])))
 					for market in markets: # find the betting market for this team
 						if (market['description'][0][1] == runner['name'] or market['description'][0][1][-4:].upper() == runner['name'][:4]):
-							print(ppy.bet_place(market['id'], Amount(random.uniform(0.02, 0.08), "BTF"), runner['prices'][0]['odds'], runner['prices'][0]['side']))
-							print(ppy.bet_place(market['id'], Amount(random.uniform(0.02, 0.08), "BTF"), runner['prices'][1]['odds'], runner['prices'][1]['side']))
+							# place a bet on the current market, with an amount between .02 and .08, using odds with .0001 precision, on the desired side (back or lay)
+							print(odds_round(runner['prices'][0]['odds']))
+							print(odds_round(runner['prices'][1]['odds']))
+							back = ppy.bet_place(market['id'], Amount(random.uniform(0.02, 0.08), "BTF"), odds_round(runner['prices'][0]['odds']), runner['prices'][0]['side'])
+							print(back)
+							lay = ppy.bet_place(market['id'], Amount(random.uniform(0.02, 0.08), "BTF"), odds_round(runner['prices'][1]['odds']), runner['prices'][1]['side'])
+							print(lay)
 
 def cancelUnmatchedBets(ppy):
 	unmatched = json.loads(json.dumps(bookie.getUnmatchedBets("1.2.18"))) # account id of bettor
@@ -37,8 +49,8 @@ if __name__ == '__main__':
 		json_response = response.json()
 		for event in json_response['events']:
 			for market in event['markets']:
-				if (market['name'] == "Match Odds" and market['in-running-flag']): # aka if bettingmarketgroup = moneyline
-				# if (market['name'] == "Match Odds" and market['start'] == "2018-06-14T15:00:00.000Z"): # aka if bettingmarketgroup = moneyline
+				# if (market['name'] == "Match Odds" and market['in-running-flag']): # aka if bettingmarketgroup = moneyline
+				if (market['name'] == "Match Odds" and market['start'] == "2018-06-14T15:00:00.000Z"): # aka if bettingmarketgroup = moneyline
 					for runner in market['runners']: # runner is a bettingmarket
 						placeBetHelper(event['start'], runner, ppy)
 		time.sleep(30)
