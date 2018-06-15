@@ -52,6 +52,7 @@ if __name__ == '__main__':
 			k, v = row
 			mappings[k] = v
 
+	something_in_play = False
 	while True:
 		print("Cancelling...")
 		cancelUnmatchedBets(ppy)
@@ -62,9 +63,14 @@ if __name__ == '__main__':
 		json_response = response.json()
 		for event in json_response['events']:
 			for market in event['markets']:
-				# if (market['name'] == "Match Odds" and market['in-running-flag']): # aka if bettingmarketgroup = moneyline
-				if (market['name'] == "Match Odds" and market['start'] == "2018-06-15T12:00:00.000Z"): # aka if bettingmarketgroup = moneyline
+				if (market['name'] == "Match Odds" and market['in-running-flag']): # aka if bettingmarketgroup = moneyline
+				# if (market['name'] == "Match Odds" and market['start'] == "2018-06-15T12:00:00.000Z"): # aka if bettingmarketgroup = moneyline
 					placeBetHelper(market['runners'], mappings, ppy)
-					# for runner in market['runners']: # runner is a bettingmarket
-						# placeBetHelper(event['start'], runner, ppy)
-		time.sleep(20)
+					something_in_play = True
+		if (something_in_play):
+			print("Something in play, sleeping for 20s")
+			time.sleep(20)
+		else:
+			print("Nothing in play, sleeping for 1 hour")
+			something_in_play = False
+			time.sleep(3600)
