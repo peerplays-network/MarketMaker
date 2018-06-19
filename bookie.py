@@ -18,7 +18,7 @@ def getUnmatchedBets(bettor_id):
 
 def getSports():
 	sports = Sports(peerplays_instance=ppy)
-	# TODO Add pagination 
+	# TODO Add pagination
 	return sports.sports
 
 def getEventGroups(sport_id):

@@ -10,10 +10,26 @@ from peerplays.amount import Amount
 
 # this function exists to deal with the precision of the backing_multiplier
 def odds_round(x):
-	if (x >= 50):
-		return round(50 * round(float(x)/50),2)
-	elif (x >= 10):
-		return round(0.5 * round(float(x)/0.5),2)
+	if (x <= 1000 and x > 100):
+		return round(10 * round(float(x)/10),0)
+	elif (x <= 100 and x > 50):
+		return round(5 * round(float(x)/5),0)
+	elif (x <= 50 and x > 30):
+		return round(2 * round(float(x)/2),0)
+	elif (x <= 30 and x > 20):
+		return round(1 * round(float(x)/1),0)
+	elif (x <= 20 and x > 10):
+		return round(0.5 * round(float(x)/0.5), 1)
+	elif (x <= 10 and x > 6):
+		return round(0.2 * round(float(x)/0.2), 1)
+	elif (x <= 6 and x > 4):
+		return round(0.1 * round(float(x)/0.1), 1)
+	elif (x <= 4 and x > 3):
+		return round(0.05 * round(float(x)/0.05), 2)
+	elif (x <= 3 and x > 2):
+		return round(0.02 * round(float(x)/0.02), 2)
+	elif (x <= 2):
+		return round(0.01 * round(float(x)/0.01), 2)
 	else:
 		return float('%.2f'%(x))
 
@@ -48,7 +64,7 @@ def placeBetHelper(runners, mappings, ppy):
 							print('Handling exception... bad odds?')
 
 if __name__ == '__main__':
-	ppy = PeerPlays(nobroadcast=False)
+	ppy = PeerPlays(nobroadcast=True)
 	ppy.wallet.unlock(bookie.pwd)
 	url = "https://api.matchbook.com/edge/rest/events?category-ids=15,400798618290009,410468520880009,617663353250012&exchange-type=back-lay&odds-type=DECIMAL&price-depth=1"
 	with open('mapping.txt', 'r') as mappingsfile:
