@@ -4,7 +4,6 @@ from flask import request
 from flask import jsonify
 from peerplays import PeerPlays
 from peerplaysbase import operations
-from peerplays.account import Account
 from peerplays.amount import Amount
 import bookie
 
@@ -35,9 +34,13 @@ def cancelBets(bet_id):
 	cancel_response = ppy.bet_cancel(bet_id)
 	return jsonify(cancel_response)
 
-@app.route("/unmatchedBets/bettor/<bettor_id>", methods=['GET'])
+@app.route("/bettors/<bettor_id>/unmatchedBets/", methods=['GET'])
 def getUnmatchedBets(bettor_id):
 	return jsonify(bookie.getUnmatchedBets(bettor_id))
+
+@app.route("/bettors/<bettor_id>/history", methods=['GET'])
+def getHistory(bettor_id):
+	return jsonify(bookie.getHistory(bettor_id))
 
 @app.route("/sports", methods=['GET'])
 def getSports():
