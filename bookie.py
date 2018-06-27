@@ -1,6 +1,7 @@
 import json
 from getpass import getpass
 from peerplays import PeerPlays
+from peerplays.account import Account
 from peerplays.sport import Sport, Sports
 from peerplays.eventgroup import EventGroup, EventGroups
 from peerplays.event import Event, Events
@@ -15,6 +16,13 @@ ppy.wallet.unlock(pwd)
 def getUnmatchedBets(bettor_id):
 	unmatched_bets = ppy.rpc.get_all_unmatched_bets_for_bettor(bettor_id)
 	return unmatched_bets
+
+def getHistory(bettor_id, limit=100):
+	a = Account(bettor_id, peerplays_instance=ppy, full=True)
+	history = []
+	for line in a.history(limit=limit):
+		history.append(line)
+	return history
 
 def getSports():
 	sports = Sports(peerplays_instance=ppy)
