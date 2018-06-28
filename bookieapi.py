@@ -13,7 +13,7 @@ ppy.wallet.unlock(bookie.pwd)
 
 @app.route("/placeBets", methods=['POST'])
 def placeBets():
-	account = request.args['account']
+	account = request.args.get("account")
 	body = request.get_json()
 	response = []
 	for bet in body['bets']:
@@ -25,14 +25,15 @@ def placeBets():
 		a  = Amount(bet_amount, asset_symbol)
 		#right now, we will place bets successfully one by one until one breaks.
 		#the user will be confused whether any of the bets got placed or not
-		bet_response = ppy.bet_place(betting_market_id, a, odds, back_or_lay, account)
+		bet_response = ppy.bet_place(betting_market_id, a, odds, back_or_lay, account, fee_asset = asset_symbol)
 		response.append(bet_response)
 	return jsonify(response)
 
-@app.route("/cancelBets/bet/<bet_id>", methods=['DELETE'])
+@app.route("/bets/<bet_id>", methods=['DELETE'])
 def cancelBets(bet_id):
 	# TODO cancel by event id, bmg id
-	cancel_response = ppy.bet_cancel(bet_id)
+	account = request.args.get("account")
+	cancel_response = ppy.bet_cancel(bet_id, account)
 	return jsonify(cancel_response)
 
 @app.route("/bettors/<bettor_id>/unmatchedBets/", methods=['GET'])
