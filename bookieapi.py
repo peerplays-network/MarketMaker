@@ -40,6 +40,10 @@ def cancelBets(bet_id):
 def getUnmatchedBets(bettor_id):
 	return jsonify(bookie.getUnmatchedBets(bettor_id))
 
+# @app.route("/bettors/<bettor_id>/matchedBets", methods=['GET'])
+# def getMatchedBets(bettor_id):
+# 	return jsonify(bookie.getMatchedBets(bettor_id))
+
 @app.route("/bettors/<bettor_id>/history", methods=['GET'])
 def getHistory(bettor_id):
 	limit = int(request.args['limit'])
@@ -70,4 +74,4 @@ def getRules(rules_id):
 	return jsonify(bookie.getRules(rules_id))
 
 if __name__ == '__main__':
-	app.run(debug=False, host='0.0.0.0', port=5001)
+	app.run(debug=False, host='0.0.0.0', port=5051)

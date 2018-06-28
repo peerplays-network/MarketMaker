@@ -16,19 +16,20 @@ RUN pip3 install -r /app/requirements.txt
 RUN pip3 install peerplays --upgrade
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
-RUN peerplays set node ws://ec2-35-183-1-21.ca-central-1.compute.amazonaws.com:8090
-RUN peerplays createwallet --password q
-RUN echo q | peerplays addkey 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
+RUN peerplays set node ws://ec2-35-182-42-231.ca-central-1.compute.amazonaws.com:8090
+RUN peerplays createwallet --password supersecret
+RUN echo supersecret | peerplays addkey 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
 RUN peerplays set default_account nathan
 
 # Install app
 ADD . /app
 
-# Make settings persitent
+# Make settings persistent
 VOLUME ["/app"]
 
 # rpc service:
-EXPOSE 5000
+EXPOSE 5051
 
 # default execute entry
-CMD echo q | python3 /app/bookie-api.py
+WORKDIR /app
+CMD echo supersecret | python3 /app/bookieapi.py
