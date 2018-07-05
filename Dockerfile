@@ -19,6 +19,8 @@ ENV LANG=C.UTF-8
 RUN peerplays set node ws://ec2-35-182-42-231.ca-central-1.compute.amazonaws.com:8090
 RUN peerplays createwallet --password supersecret
 RUN echo supersecret | peerplays addkey 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
+RUN echo supersecret | peerplays addkey 5KT58xismnQMGJjfxtkNtF5NzzmNxjQ7wLMgXddtzWY3PPjW656
+RUN echo supersecret | peerplays addkey 5KcxKK2Js2L2JFE6VgKuWMXUhJZQu8rfVnQM3RXvqxwvTKHCV9g
 RUN peerplays set default_account nathan
 
 # Install app
