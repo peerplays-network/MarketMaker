@@ -16,7 +16,7 @@ def placeBets():
 	account = request.args.get("account")
 	body = request.get_json()
 	response = []
-	for bet in body['bets']:
+	for bet in body:
 		asset_symbol = bet['asset_symbol']
 		bet_amount = bet['bet_amount']
 		betting_market_id = bet['betting_market_id']
