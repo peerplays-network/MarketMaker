@@ -45,7 +45,7 @@ def cancelBets(bet_id):
 	except Exception as e:
 		return jsonify(error=e.__doc__)
 
-@app.route("/bettors/<bettor_id>/unmatchedBets/", methods=['GET'])
+@app.route("/bettors/<bettor_id>/unmatchedBets", methods=['GET'])
 def getUnmatchedBets(bettor_id):
 	try:
 		return jsonify(bookie.getUnmatchedBets(bettor_id))
@@ -62,7 +62,11 @@ def getUnmatchedBets(bettor_id):
 @app.route("/bettors/<bettor_id>/history", methods=['GET'])
 def getHistory(bettor_id):
 	try:
-		limit = int(request.args['limit'])
+		try:
+			limit = int(request.args['limit'])
+		except:
+			limit = 10
+		print(limit)
 		return jsonify(bookie.getHistory(bettor_id,limit))
 	except Exception as e:
 		return jsonify(error=e.__doc__)
