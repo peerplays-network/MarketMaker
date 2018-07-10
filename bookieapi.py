@@ -7,12 +7,15 @@ from flask import make_response
 from peerplays import PeerPlays
 from peerplaysbase import operations
 from peerplays.amount import Amount
+from peerplays.account import Account
 from peerplays.exceptions import *
 import bookie
 
 app = Flask(__name__)
 ppy = PeerPlays(nobroadcast=True)
 ppy.wallet.unlock(bookie.pwd)
+
+#Bookie related calls
 
 @app.route("/placeBets", methods=['POST'])
 def placeBets():
@@ -48,26 +51,16 @@ def cancelBets(bet_id):
 @app.route("/bettors/<bettor_id>/unmatchedBets", methods=['GET'])
 def getUnmatchedBets(bettor_id):
 	try:
-		return jsonify(bookie.getUnmatchedBets(bettor_id))
+		a = Account(bettor_id, peerplays_instance=ppy, full=True)
+		return jsonify(bookie.getUnmatchedBets(a['id']))
 	except Exception as e:
 		return jsonify(error=e.__doc__)
 
-# @app.route("/bettors/<bettor_id>/matchedBets", methods=['GET'])
-# def getMatchedBets(bettor_id):
-#	try:
-# 		return jsonify(bookie.getMatchedBets(bettor_id))
-#	except Exception as e:
-#		return jsonify(error=e.__doc__)
-
-@app.route("/bettors/<bettor_id>/history", methods=['GET'])
-def getHistory(bettor_id):
+@app.route("/bettors/<bettor_id>/matchedBets", methods=['GET'])
+def getMatchedBets(bettor_id):
 	try:
-		try:
-			limit = int(request.args['limit'])
-		except:
-			limit = 10
-		print(limit)
-		return jsonify(bookie.getHistory(bettor_id,limit))
+		a = Account(bettor_id, peerplays_instance=ppy, full=True)
+		return jsonify(bookie.getMatchedBets(a['id']))
 	except Exception as e:
 		return jsonify(error=e.__doc__)
 
@@ -110,6 +103,27 @@ def getBettingMarkets(bmg_id):
 def getRules(rules_id):
 	try:
 		return jsonify(bookie.getRules(rules_id))
+	except Exception as e:
+		return jsonify(error=e.__doc__)
+
+#Other calls
+
+@app.route("/bettors/<bettor_id>/history", methods=['GET'])
+def getHistory(bettor_id):
+	try:
+		try:
+			limit = int(request.args['limit'])
+		except:
+			limit = 10
+		print(limit)
+		return jsonify(bookie.getHistory(bettor_id,limit))
+	except Exception as e:
+		return jsonify(error=e.__doc__)
+
+@app.route("/bettors/<bettor_id>/accountDetails", methods=['GET'])
+def getAccountDetails(bettor_id):
+	try:
+		return jsonify(bookie.getAccountDetails(bettor_id))
 	except Exception as e:
 		return jsonify(error=e.__doc__)
 

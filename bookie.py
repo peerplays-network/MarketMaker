@@ -17,16 +17,9 @@ def getUnmatchedBets(bettor_id):
 	unmatched_bets = ppy.rpc.get_all_unmatched_bets_for_bettor(bettor_id)
 	return unmatched_bets
 
-# def getMatchedBets(bettor_id):
-# 	matched_bets = ppy.rpc.get_all_matched_bets_for_bettor(bettor_id)
-# 	return matched_bets
-
-def getHistory(bettor_id, limit=100):
-	a = Account(bettor_id, peerplays_instance=ppy, full=True)
-	history = []
-	for line in a.history(limit=limit):
-		history.append(line)
-	return history
+def getMatchedBets(bettor_id):
+	matched_bets = ppy.rpc.get_matched_bets_for_bettor(bettor_id, api="bookie")
+	return matched_bets
 
 def getSports():
 	sports = Sports(peerplays_instance=ppy)
@@ -57,3 +50,14 @@ def getRules(rules_id):
 	rules = Rule(rules_id, peerplays_instance=ppy)
 	# TODO add pagination
 	return rules
+
+def getHistory(bettor_id, limit=100):
+	a = Account(bettor_id, peerplays_instance=ppy, full=True)
+	history = []
+	for line in a.history(limit=limit):
+		history.append(line)
+	return history
+
+def getAccountDetails(bettor_id):
+	a = Account(bettor_id, peerplays_instance=ppy, full=True)
+	return a
