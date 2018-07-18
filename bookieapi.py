@@ -11,6 +11,7 @@ from peerplays.amount import Amount
 from peerplays.account import Account
 from peerplays.exceptions import *
 import bookie
+import time
 
 app = Flask(__name__)
 ppy = PeerPlays(nobroadcast=True)
@@ -42,18 +43,26 @@ def placeBets():
 @app.route("/placeSingleBet", methods=['POST'])
 def placeSingleBet():
 	try:
-		account = request.args.get("account")
+		accountStr = request.args.get("account")
+		account = Account(accountStr, peerplays_instance = ppy, full=True)
+		print(accountStr)
 		body = request.get_json()
-		asset_symbol = bet['asset_symbol']
-		bet_amount = bet['bet_amount']
-		betting_market_id = bet['betting_market_id']
-		odds = bet['odds']
-		back_or_lay = bet['back_or_lay']
+		asset_symbol = body['asset_symbol']
+		bet_amount = body['bet_amount']
+		betting_market_id = body['betting_market_id']
+		odds = body['odds']
+		back_or_lay = body['back_or_lay']
 		a  = Amount(bet_amount, asset_symbol)
 		#right now, we will place bets successfully one by one until one breaks.
 		#the user will be confused whether any of the bets got placed or not
-		bet_response = ppy.bet_place(betting_market_id, a, odds, back_or_lay, account, fee_asset = asset_symbol)
-		return jsonify(bet_response)
+		ppy.bet_place(betting_market_id, a, odds, back_or_lay, account['id'], fee_asset = asset_symbol)
+		time.sleep(3) # until next block is produced
+		unmatchedBets = bookie.getUnmatchedBets(account['id'])
+		if unmatchedBets[-1]['betting_market_id'] == betting_market_id:
+			return jsonify(unmatchedBets[-1])
+		else:
+			matchedBets = bookie.getMatchedBets(account['id'])
+			return jsonify(matchedBets[0])
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
 
