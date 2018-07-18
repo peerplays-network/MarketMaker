@@ -39,6 +39,24 @@ def placeBets():
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
 
+@app.route("/placeSingleBet", methods=['POST'])
+def placeSingleBet():
+	try:
+		account = request.args.get("account")
+		body = request.get_json()
+		asset_symbol = bet['asset_symbol']
+		bet_amount = bet['bet_amount']
+		betting_market_id = bet['betting_market_id']
+		odds = bet['odds']
+		back_or_lay = bet['back_or_lay']
+		a  = Amount(bet_amount, asset_symbol)
+		#right now, we will place bets successfully one by one until one breaks.
+		#the user will be confused whether any of the bets got placed or not
+		bet_response = ppy.bet_place(betting_market_id, a, odds, back_or_lay, account, fee_asset = asset_symbol)
+		return jsonify(bet_response)
+	except Exception as e:
+		return make_response(jsonify(error=e.__doc__), 500)
+
 @app.route("/bets/<bet_id>", methods=['DELETE'])
 def cancelBets(bet_id):
 	try:
