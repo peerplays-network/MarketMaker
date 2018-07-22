@@ -8,10 +8,13 @@ from peerplays.event import Event, Events
 from peerplays.bettingmarketgroup import BettingMarketGroup, BettingMarketGroups
 from peerplays.bettingmarket import BettingMarket, BettingMarkets
 from peerplays.rule import Rule, Rules
+from bos_mint.node import Node
 
 pwd = getpass()
 ppy = PeerPlays(nobroadcast=True)
 ppy.wallet.unlock(pwd)
+
+#Bookie Calls
 
 def getUnmatchedBets(bettor_id):
 	unmatched_bets = ppy.rpc.get_all_unmatched_bets_for_bettor(bettor_id)
@@ -64,6 +67,14 @@ def getBettingMarkets(bmg_id):
 def getRules(rules_id):
 	# TODO add pagination
 	return Rule(rules_id, peerplays_instance=ppy)
+
+# MINT calls
+
+def createSport(args):
+	return Node().createSport(args)
+
+
+# Other Calls
 
 def getHistory(bettor_id, limit=100):
 	a = Account(bettor_id, peerplays_instance=ppy, full=True)
