@@ -45,7 +45,6 @@ def placeSingleBet():
 	try:
 		accountStr = request.args.get("account")
 		account = Account(accountStr, peerplays_instance = ppy, full=True)
-		print(accountStr)
 		body = request.get_json()
 		asset_symbol = body['asset_symbol']
 		bet_amount = body['bet_amount']
@@ -53,8 +52,6 @@ def placeSingleBet():
 		odds = body['odds']
 		back_or_lay = body['back_or_lay']
 		a  = Amount(bet_amount, asset_symbol)
-		#right now, we will place bets successfully one by one until one breaks.
-		#the user will be confused whether any of the bets got placed or not
 		ppy.bet_place(betting_market_id, a, odds, back_or_lay, account['id'], fee_asset = asset_symbol)
 		time.sleep(3) # until next block is produced
 		unmatchedBets = bookie.getUnmatchedBets(account['id'])
@@ -198,6 +195,15 @@ def getBettingMarkets(bmg_id):
 def getRules(rules_id):
 	try:
 		return jsonify(bookie.getRules(rules_id))
+	except Exception as e:
+		return make_response(jsonify(error=e.__doc__), 500)
+
+#MINT calls
+
+@app.route("/sports", methods=['POST'])
+def createSport():
+	try:
+		return jsonify(bookie.createSport(request.get_json()['name']))
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
 
