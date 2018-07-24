@@ -71,8 +71,11 @@ def getRules(rules_id):
 # MINT calls
 
 def createSport(args):
-	print("In createSport")
-	return Node().createSport([['de', 'Michael Sport DE'], ['en', 'Michael Sport']])
+	try:
+		print("In createSport")
+		return Node().createSport([['de', 'Michael Sport DE'], ['en', 'Michael Sport']])
+	except Exception as e:
+		print(e)
 
 
 # Other Calls
