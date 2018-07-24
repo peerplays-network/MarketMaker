@@ -14,7 +14,7 @@ import bookie
 import time
 
 app = Flask(__name__)
-ppy = PeerPlays(nobroadcast=True)
+ppy = PeerPlays(nobroadcast=False)
 ppy.wallet.unlock(bookie.pwd)
 
 #Bookie related calls
@@ -203,8 +203,11 @@ def getRules(rules_id):
 @app.route("/sports", methods=['POST'])
 def createSport():
 	try:
-		return jsonify(bookie.createSport(request.get_json()['name']))
+		body = request.get_json()
+		print(body)
+		return jsonify(bookie.createSport("nick"))
 	except Exception as e:
+		print(e)
 		return make_response(jsonify(error=e.__doc__), 500)
 
 #Other calls

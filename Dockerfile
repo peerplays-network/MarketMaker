@@ -34,4 +34,4 @@ EXPOSE 5051
 
 # default execute entry
 WORKDIR /app
-CMD echo supersecret | python3 /app/bookieapi.py
+CMD echo supersecret | python3 -u /app/bookieapi.py
