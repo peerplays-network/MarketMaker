@@ -14,7 +14,7 @@ import bookie
 import time
 
 app = Flask(__name__)
-ppy = PeerPlays(nobroadcast=True)
+ppy = PeerPlays(nobroadcast=False)
 ppy.wallet.unlock(bookie.pwd)
 
 #Bookie related calls
