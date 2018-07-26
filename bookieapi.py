@@ -68,7 +68,7 @@ def placeSingleBet():
 		return make_response(jsonify(error=e.__doc__), 500)
 
 @app.route("/bets/<bet_id>", methods=['DELETE'])
-def cancelBets(bet_id):
+def cancelBet(bet_id):
 	try:
 		# TODO cancel by event id, bmg id
 		account = request.args.get("account")
@@ -76,6 +76,21 @@ def cancelBets(bet_id):
 			return make_response(jsonify(error="Specify account in query params"), 500)
 		cancel_response = ppy.bet_cancel(bet_id, account)
 		return jsonify(cancel_response)
+	except Exception as e:
+		return make_response(jsonify(error=e.__doc__), 500)
+
+@app.route("/bets", methods=['DELETE'])
+def cancelBets():
+	try:
+		account = request.args.get("account")
+		if account is None:
+			return make_respone(jsonify(error="Specify account in query params"))
+		body = request.get_json()
+		response = []
+		for bet in body['ids']:
+			cancel_response = ppy.bet_cancel(bet, account)
+			response.append(cancel_response)
+		return jsonify(response)
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
 
