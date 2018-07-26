@@ -59,11 +59,14 @@ def placeSingleBet():
 		ppy.bet_place(betting_market_id, a, odds, back_or_lay, account['id'], fee_asset = asset_symbol)
 		time.sleep(3) # until next block is produced
 		unmatchedBets = bookie.getUnmatchedBets(account['id'])
-		if unmatchedBets[-1]['betting_market_id'] == betting_market_id:
-			return jsonify(unmatchedBets[-1])
-		else:
-			matchedBets = bookie.getMatchedBets(account['id'])
-			return jsonify(matchedBets[0])
+		for bet in reversed(unmatchedBets):
+			if bet['betting_market_id'] == betting_market_id:
+				return jsonify(bet)
+		# only reachable if bet has already been fully matched
+		matchedBets = bookie.getMatchedBets(account['id'])
+		for bet in matchedBets:
+			if bet['betting_market_id'] == betting_market_id:
+				return jsonify(bet)
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
 
