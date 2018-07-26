@@ -79,13 +79,12 @@ def cancelBet(bet_id):
 @app.route("/bets", methods=['DELETE'])
 def cancelBets():
 	try:
-		print(request.get_json())
 		account = request.args.get("account")
-		body = request.get_json(force=True)
+		if account is None:
+			return make_respone(jsonify(error="Specify account in query params"))
+		body = request.get_json()
 		response = []
-		print(body)
 		for bet in body['ids']:
-			print(bet)
 			cancel_response = ppy.bet_cancel(bet, account)
 			response.append(cancel_response)
 		return jsonify(response)
