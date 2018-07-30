@@ -21,6 +21,16 @@ connection:
         nobroadcast: False
         num_retries: 1
 
+node: ws://ec2-35-183-41-242.ca-central-1.compute.amazonaws.com:8090
+network: elizabeth
+nobroadcast: False
+passphrase: peerplays**
+api_whitelist:
+    - 0.0.0.0
+    - localhost
+BOOKIE_PROPOSER: init0
+BOOKIE_APPROVER: init0
+
 allowed_assets:
     - BTF
     - BTC
