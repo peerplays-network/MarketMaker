@@ -70,7 +70,7 @@ def getRules(rules_id):
 
 # MINT calls
 
-def createSport(args):
+def createSport():
 	try:
 		print("In createSport")
 		return Node().createSport([['de', 'Michael Sport DE'], ['en', 'Michael Sport']])

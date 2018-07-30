@@ -205,7 +205,7 @@ def createSport():
 	try:
 		body = request.get_json()
 		print(body)
-		return jsonify(bookie.createSport("nick"))
+		return jsonify(bookie.createSport())
 	except Exception as e:
 		print(e)
 		return make_response(jsonify(error=e.__doc__), 500)
