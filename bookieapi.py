@@ -60,12 +60,12 @@ def placeSingleBet():
 		time.sleep(3) # until next block is produced
 		unmatchedBets = bookie.getUnmatchedBets(account['id'])
 		for bet in reversed(unmatchedBets):
-			if bet['betting_market_id'] == betting_market_id:
+			if bet['betting_market_id'] == betting_market_id and bet['back_or_lay'] == back_or_lay and bet['backer_multiplier'] == odds * 10000: #10000 = precision
 				return jsonify(bet)
 		# only reachable if bet has already been fully matched
 		matchedBets = bookie.getMatchedBets(account['id'])
 		for bet in matchedBets:
-			if bet['betting_market_id'] == betting_market_id:
+			if bet['betting_market_id'] == betting_market_id and bet['back_or_lay'] == back_or_lay and bet['backer_multiplier'] == odds * 10000: #10000 = precision
 				return jsonify(bet)
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
