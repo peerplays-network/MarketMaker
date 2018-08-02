@@ -18,6 +18,13 @@ connection:
     elizabeth:
         node:
             - ws://ec2-35-183-41-242.ca-central-1.compute.amazonaws.com:8090
+        account: init0
+        keys:
+            - 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
+            - 5KT58xismnQMGJjfxtkNtF5NzzmNxjQ7wLMgXddtzWY3PPjW656
+            - 5KcxKK2Js2L2JFE6VgKuWMXUhJZQu8rfVnQM3RXvqxwvTKHCV9g
+            - 5KQFHTVHuRNCiss5GX5EsCuXH5ctdC8RP13HZryShUT4PVHaUaw
+            - 5JcEg5M167yX8qsWaswutfvuraxMjap9MfnnpJ9XX2BTgB3x6SY
         nobroadcast: False
         num_retries: 1
 
