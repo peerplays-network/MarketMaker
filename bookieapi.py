@@ -204,7 +204,6 @@ def getRules(rules_id):
 def createSport():
 	try:
 		body = request.get_json()
-		print(body)
 		return jsonify(bookie.createSport())
 	except Exception as e:
 		print(e)

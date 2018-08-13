@@ -8,10 +8,9 @@ from peerplays.event import Event, Events
 from peerplays.bettingmarketgroup import BettingMarketGroup, BettingMarketGroups
 from peerplays.bettingmarket import BettingMarket, BettingMarkets
 from peerplays.rule import Rule, Rules
-from bos_mint.node import Node
 
 pwd = getpass()
-ppy = PeerPlays(nobroadcast=True)
+ppy = PeerPlays(nobroadcast=False)
 ppy.wallet.unlock(pwd)
 
 #Bookie Calls
@@ -67,16 +66,6 @@ def getBettingMarkets(bmg_id):
 def getRules(rules_id):
 	# TODO add pagination
 	return Rule(rules_id, peerplays_instance=ppy)
-
-# MINT calls
-
-def createSport():
-	try:
-		print("In createSport")
-		return Node().createSport([['de', 'Michael Sport DE'], ['en', 'Michael Sport']])
-	except Exception as e:
-		print(e)
-
 
 # Other Calls
 
