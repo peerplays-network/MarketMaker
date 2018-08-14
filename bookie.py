@@ -69,7 +69,19 @@ def getRules(rules_id):
 
 # Other Calls
 
-def getHistory(bettor_id, limit=100):
+def getResolutions(bettor_id, bmg_id=None):
+	a = Account(bettor_id, peerplays_instance=ppy, full=True)
+	history=[]
+	for line in a.history(limit=1000): # sufficiently large to get all resolutions
+		if line['op'][0] == 64:
+			if bmg_id is not None:
+				if line['op'][1]['betting_market_group_id'] == bmg_id:
+					history.append(line)
+			else:
+				history.append(line)
+	return history
+
+def getHistory(bettor_id, limit=10):
 	a = Account(bettor_id, peerplays_instance=ppy, full=True)
 	history = []
 	for line in a.history(limit=limit):
