@@ -198,17 +198,6 @@ def getRules(rules_id):
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
 
-#MINT calls
-
-@app.route("/sports", methods=['POST'])
-def createSport():
-	try:
-		body = request.get_json()
-		return jsonify(bookie.createSport())
-	except Exception as e:
-		print(e)
-		return make_response(jsonify(error=e.__doc__), 500)
-
 #Other calls
 
 @app.route("/bettors/<bettor_id>/history", methods=['GET'])
@@ -218,7 +207,6 @@ def getHistory(bettor_id):
 			limit = int(request.args['limit'])
 		except:
 			limit = 10
-		print(limit)
 		return jsonify(bookie.getHistory(bettor_id,limit))
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
