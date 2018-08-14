@@ -10,8 +10,10 @@ from peerplays.bettingmarket import BettingMarket, BettingMarkets
 from peerplays.rule import Rule, Rules
 
 pwd = getpass()
-ppy = PeerPlays(nobroadcast=True)
+ppy = PeerPlays(nobroadcast=False)
 ppy.wallet.unlock(pwd)
+
+#Bookie Calls
 
 def getUnmatchedBets(bettor_id):
 	unmatched_bets = ppy.rpc.get_all_unmatched_bets_for_bettor(bettor_id)
@@ -64,6 +66,8 @@ def getBettingMarkets(bmg_id):
 def getRules(rules_id):
 	# TODO add pagination
 	return Rule(rules_id, peerplays_instance=ppy)
+
+# Other Calls
 
 def getResolutions(bettor_id, bmg_id=None):
 	a = Account(bettor_id, peerplays_instance=ppy, full=True)
