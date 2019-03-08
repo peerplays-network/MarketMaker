@@ -12,3 +12,8 @@ docker-compose up -d
 
 The dockerized container will be pointing to chain and using the account from config.yaml
 The API is accessible on 127.0.0.1:5000 by default
+
+BOOKIEBOT
+To run bookiebot, edit line 38 with your account id and run
+python3 bookiebot.py
+Also ensure that the mapping between matchbook game ids and peerplays game ids are matching in mappings.txt
