@@ -17,7 +17,8 @@ app = Flask(__name__)
 ppy = PeerPlays(nobroadcast=False)
 ppy.wallet.unlock(bookie.pwd)
 
-#Bookie related calls
+
+# Bookie related calls
 
 @app.route("/placeBets", methods=['POST'])
 def placeBets():
@@ -34,8 +35,8 @@ def placeBets():
 			odds = bet['odds']
 			back_or_lay = bet['back_or_lay']
 			a  = Amount(bet_amount, asset_symbol)
-			#right now, we will place bets successfully one by one until one breaks.
-			#the user will be confused whether any of the bets got placed or not
+			# right now, we will place bets successfully one by one until one breaks.
+			# the user will be confused whether any of the bets got placed or not
 			bet_response = ppy.bet_place(betting_market_id, a, odds, back_or_lay, account, fee_asset = asset_symbol)
 			response.append(bet_response)
 		return jsonify(response)
@@ -70,6 +71,7 @@ def placeSingleBet():
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
 
+
 @app.route("/bets/<bet_id>", methods=['DELETE'])
 def cancelBet(bet_id):
 	try:
@@ -81,6 +83,7 @@ def cancelBet(bet_id):
 		return jsonify(cancel_response)
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
+
 
 @app.route("/bets", methods=['DELETE'])
 def cancelBets():
@@ -97,6 +100,7 @@ def cancelBets():
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
 
+
 @app.route("/bettors/<bettor_id>/unmatchedBets", methods=['GET'])
 def getUnmatchedBets(bettor_id):
 	try:
@@ -104,6 +108,7 @@ def getUnmatchedBets(bettor_id):
 		return jsonify(bookie.getUnmatchedBets(a['id']))
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
+
 
 @app.route("/bettors/<bettor_id>/matchedBets", methods=['GET'])
 def getMatchedBets(bettor_id):
@@ -113,12 +118,14 @@ def getMatchedBets(bettor_id):
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
 
+
 @app.route("/sports/<sport_id>", methods=['GET'])
 def getSport(sport_id):
 	try:
 		return jsonify(bookie.getSport(sport_id))
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
+
 
 @app.route("/sports", methods=['GET'])
 def getSports():
@@ -127,12 +134,14 @@ def getSports():
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
 
+
 @app.route("/eventGroups/<event_group_id>", methods=['GET'])
 def getEventGroup(event_group_id):
 	try:
 		return jsonify(bookie.getEventGroup(event_group_id))
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
+
 
 @app.route("/sports/<sport_id>/eventGroups", methods=['GET'])
 def getEventGroups(sport_id):
@@ -141,12 +150,14 @@ def getEventGroups(sport_id):
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
 
+
 @app.route("/events/<event_id>", methods=['GET'])
 def getEvent(event_id):
 	try:
 		return jsonify(bookie.getEvent(event_id))
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
+
 
 @app.route("/eventGroups/<event_group_id>/events", methods=['GET'])
 def getEvents(event_group_id):
@@ -155,6 +166,7 @@ def getEvents(event_group_id):
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
 
+
 @app.route("/bettingMarketGroups/<bmg_id>", methods=['GET'])
 def getBettingMarketGroup(bmg_id):
 	try:
@@ -162,12 +174,14 @@ def getBettingMarketGroup(bmg_id):
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
 
+
 @app.route("/events/<event_id>/bettingMarketGroups", methods=['GET'])
 def getBettingMarketGroups(event_id):
 	try:
 		return jsonify(bookie.getBettingMarketGroups(event_id))
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
+
 
 @app.route("/bettingMarket", methods=['GET'])
 def getBettingMarketByQuery():
@@ -220,12 +234,14 @@ def getBettingMarketByQuery():
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
 
+
 @app.route("/bettingMarkets/<betting_market_id>", methods=['GET'])
 def getBettingMarket(betting_market_id):
 	try:
 		return jsonify(bookie.getBettingMarket(betting_market_id))
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
+
 
 @app.route("/bettingMarketGroups/<bmg_id>/bettingMarkets", methods=['GET'])
 def getBettingMarkets(bmg_id):
@@ -234,12 +250,14 @@ def getBettingMarkets(bmg_id):
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
 
+
 @app.route("/rules/<rules_id>", methods=['GET'])
 def getRules(rules_id):
 	try:
 		return jsonify(bookie.getRules(rules_id))
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
+
 
 @app.route("/bettors/<bettor_id>/resolutions", methods=['GET'])
 def getResolutions(bettor_id):
@@ -249,7 +267,8 @@ def getResolutions(bettor_id):
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
 
-#Other calls
+# Other calls
+
 
 @app.route("/bettors/<bettor_id>/history", methods=['GET'])
 def getHistory(bettor_id):
@@ -262,12 +281,14 @@ def getHistory(bettor_id):
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
 
+
 @app.route("/bettors/<bettor_id>/accountDetails", methods=['GET'])
 def getAccountDetails(bettor_id):
 	try:
 		return jsonify(bookie.getAccountDetails(bettor_id))
 	except Exception as e:
 		return make_response(jsonify(error=e.__doc__), 500)
+
 
 if __name__ == '__main__':
 	app.run(debug=False, host='0.0.0.0', port=5051)
